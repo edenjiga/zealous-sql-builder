@@ -29,6 +29,7 @@ services:
       - 8080:8080
 
   api:
+    image: 'search-query-builder-master-api'
     build:
       context: .
       dockerfile: ./apps/api/Dockerfile
@@ -40,9 +41,12 @@ services:
       - 3000:3000
 
   web:
+    image: 'search-query-builder-master-web'
     build:
       context: .
       dockerfile: ./apps/web/Dockerfile
+      args:
+        - VITE_TECHONOLOGIES_API=${VITE_TECHONOLOGIES_API}
     ports:
       - '3001:3001'
     environment:

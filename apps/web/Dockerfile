@@ -26,6 +26,11 @@ RUN yarn install
 # Build the project and its dependencies
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
+
+# Pass the environment variable during the build process
+ARG VITE_TECHONOLOGIES_API
+ENV VITE_TECHONOLOGIES_API=$VITE_TECHONOLOGIES_API
+
 RUN yarn turbo build --filter=web...
 
 FROM base AS runner
