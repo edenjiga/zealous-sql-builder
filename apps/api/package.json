@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seeds": "ts-node ./prisma/seed.ts",
+    "dev": "nodemon src/server.ts",
+    "start": "ts-node src/server.ts",
+    "build": "prisma generate && tsc",
+    "prod": "npm run build && node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.16.1",
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "prisma": "^5.16.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "@edgar/common-types": "*"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "turbo": "^1.4.0"
+  }
+}

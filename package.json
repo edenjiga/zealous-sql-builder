@@ -1,0 +1,16 @@
+{
+  "name": "edgar-builder",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "turbo run build"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.0.6"
+  },
+  "packageManager": "npm@10.2.5"
+}
